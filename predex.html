@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin:0;
+            padding:0px;
+            box-sizing:border-box;
+        }
+        body{
+            background:linear-gradient(to left ,rgb(250, 250, 250),rgb(25, 153, 175));
+
+         }
+        h1{
+                    font-size: 45px;
+                      font-family:Georgia, 'Times New Roman', Times, serif;
+                     font-style: italic;
+
+         }
+        .container{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            position:relative;
+            top:40px;
+
+        }   
+        .mini-container{
+            border:2.5px solid green;
+            box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2), 0 0 1rem rgba(0, 0, 0, 0.2);
+            width:70%;
+            height:500px;
+            display:flex;
+            justify-content: center;
+            align-items:center;
+            flex-direction:column;
+            gap:10%;
+
+        }     
+        .container-forms{
+    
+            border:1px solid black;
+            height: 50%;
+            width:50%;
+            
+            
+        }
+        .form-ele{
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            gap:50px;
+
+        }
+        #name-text{
+            height:40px;
+            width:80%;
+            background-color: rgba(139, 138, 138, 0.479);
+            outline: none;
+            font-size: 15px;
+            border-radius: 20px;
+            
+
+        }
+        #nmae-text:focus{
+            background-color: none;
+
+        }
+        #btn-1{
+            color:brown;
+            font-size: 25px;
+            height:40px;
+            width:80px;
+            border-radius: 20px;
+            box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2), 0 0 1rem rgba(0, 0, 0, 0.2);
+            outline: none;
+            border:none;
+            background-color: aqua;
+
+        }
+        #user-name-form-ele{
+            position:relative;
+            top:40px;
+            font-size: 35px;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-style: italic;
+
+        }
+              
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="mini-container">
+            <h1>SIGIN-IN</h1>
+            <div class="container-forms">
+                <form action="./index.html">
+                    <div class="form-ele">
+                            <label for="name-text" id="user-name-form-ele"><b>UserName</b></label>
+                            <input type="text" id="name-text" name="name-text" placeholder="Enter Your Name"  required>
+                            <button type="submit " id="btn-1" onclick="submition()"><b>>></b></button>
+                    </div>
+                </form>    
+            </div>
+        </div>
+    </div>
+    <script type="text/Javascript">
+        function colr(){
+        var name=document.getElementById("name-text").value;
+        if(name==""){
+            document.getElementById("name-text").style.borderColor="red";
+            document.getElementById("btn-1").style.color="red";
+
+        }
+        else{
+
+            document.getElementById("name-text").style.borderColor="green";
+            document.getElementById("btn-1").style.color="green";
+
+
+        }
+    }
+    setInterval(colr,100);
+
+    
+    function submition(){
+        var name=document.getElementById("name-text").value;
+        
+        localStorage.setItem('storedlocally',name);
+        
+    }
+    </script>
+    
+</body>
+</html>
